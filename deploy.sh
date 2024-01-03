@@ -3,7 +3,8 @@
 
 if ! command -v flyctl >/dev/null 2>&1; then
     printf '\e[33mCould not resolve command - flyctl. So, install flyctl first.\n\e[0m'
-    curl -L https://fly.io/install.sh | FLYCTL_INSTALL=/usr/local sh
+    curl -L https://fly.io/install.sh | sh
+    cp /home/runner/.fly/bin/flyctl /usr/local/bin/
 fi
 
 if [ -z "${APP_NAME}" ]; then
